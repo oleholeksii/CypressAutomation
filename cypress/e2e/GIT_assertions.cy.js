@@ -135,6 +135,7 @@ context('Assertions', () => {
     it('retries the should callback untill assertions pass', () => {
       cy.get('#random-number')
         .should(($div) => {
+          // $div tutaj to wczesniej znaleziony random number
           const n = parseFloat($div.text())
 
           expect(n).to.be.gte(1).and.be.lte(10)
